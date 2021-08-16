@@ -9,3 +9,6 @@
   list-style: circle;
   color: rgb(182, 48, 0);
 }
+#error_explanation {
+  margin-left: 110px;
+}
