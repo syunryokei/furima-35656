@@ -18,4 +18,7 @@ class User < ApplicationRecord
         end
         validates :password,  format: {with: PASSWORD_REGEX, message: '英字と数字の両方を含めて設定してください' }
 
+
+        has_many :items
+
 end
