@@ -12,7 +12,7 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :product_name
     validates :product_info
-    validates :price
+    validates :price, numericality: {in: 300..9999999 }
     validates :category_id, numericality: { other_than: 1, message: "カテゴリーを選択してください" }
     validates :condition_id, numericality: { other_than: 1, message: "商品の状態を選択してください" }
     validates :postage_type_id, numericality: { other_than: 1, message: "発送料の負担を選択してください" }
