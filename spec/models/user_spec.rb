@@ -16,7 +16,7 @@ RSpec.describe User, type: :model do
       it 'family_nameが空だと登録できないこと' do
         @user.family_name = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Family name can't be blank") 
+        expect(@user.errors.full_messages).to include("Family name can't be blank")
       end
       it 'family_nameが全角日本語でないと登録できないこと' do
         @user.family_name = 'suzuki'
@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
       it 'first_nameが空だと登録できないこと' do
         @user.first_name = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("First name can't be blank") 
+        expect(@user.errors.full_messages).to include("First name can't be blank")
       end
       it 'family_nameが全角日本語でないと登録できないこと' do
         @user.first_name = 'suzuki'
@@ -72,12 +72,12 @@ RSpec.describe User, type: :model do
       it 'emailに@を含まないと登録できないこと' do
         @user.email = 'abcdefg'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email is invalid")
+        expect(@user.errors.full_messages).to include('Email is invalid')
       end
       it 'passwordが空だと登録できないこと' do
         @user.password = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password 英字と数字の両方を含めて設定してください")
+        expect(@user.errors.full_messages).to include('Password 英字と数字の両方を含めて設定してください')
       end
       it 'passwordが5文字以下だと登録できないこと' do
         @user.password = '12345'
@@ -94,12 +94,12 @@ RSpec.describe User, type: :model do
       it '英字のみのpasswordでは登録できないこと' do
         @user.password = 'abcdefg'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password 英字と数字の両方を含めて設定してください")
+        expect(@user.errors.full_messages).to include('Password 英字と数字の両方を含めて設定してください')
       end
       it '数字のみのpasswordでは登録できないこと' do
         @user.password = '123456'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password 英字と数字の両方を含めて設定してください")
+        expect(@user.errors.full_messages).to include('Password 英字と数字の両方を含めて設定してください')
       end
       it '全角文字を含むpasswordでは登録できないこと' do
         @user.password = 'ABC123abc'
@@ -114,4 +114,3 @@ RSpec.describe User, type: :model do
     end
   end
 end
-

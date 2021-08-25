@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
   def index
   end
+
   def new
     authenticate_user!
     @item = Item.new
   end
+
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -17,9 +19,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:product_name, :product_info, :price, :category_id, :condition_id, :postage_type_id, :prefectures_id, :delivery_days_id, :image).merge(user_id: current_user.id)
-    
+    params.require(:item).permit(:product_name, :product_info, :price, :category_id, :condition_id, :postage_type_id,
+                                 :prefectures_id, :delivery_days_id, :image).merge(user_id: current_user.id)
   end
-  
-  
 end
