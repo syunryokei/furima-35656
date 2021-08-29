@@ -25,27 +25,27 @@ RSpec.describe Item, type: :model do
       it 'category_idがないと出品できない' do
         @item.category_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category カテゴリーを選択してください") 
+        expect(@item.errors.full_messages).to include("Category を選択してください") 
       end
       it 'condition_idがないと出品できない' do
         @item.condition_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition 商品の状態を選択してください") 
+        expect(@item.errors.full_messages).to include("Condition を選択してください") 
       end
       it 'postage_type_idがないと出品できない' do
         @item.postage_type_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Postage type 発送料の負担を選択してください") 
+        expect(@item.errors.full_messages).to include("Postage type を選択してください") 
       end
       it 'prefectures_idがないと出品できない' do
         @item.prefectures_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefectures 発送元の地域を選択してください") 
+        expect(@item.errors.full_messages).to include("Prefectures を選択してください") 
       end
       it 'delivery_days_idがないと出品できない' do
         @item.delivery_days_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery days 発送までの日数を選択してください") 
+        expect(@item.errors.full_messages).to include("Delivery days を選択してください") 
       end
       it 'priceがないと出品できない' do
         @item.price = ""
@@ -65,30 +65,30 @@ RSpec.describe Item, type: :model do
       it 'カテゴリーに「---」が選択されている場合は出品できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category カテゴリーを選択してください") 
+        expect(@item.errors.full_messages).to include("Category を選択してください") 
       end
       it '商品の状態に「---」が選択されている場合は出品できない' do
         @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition 商品の状態を選択してください") 
+        expect(@item.errors.full_messages).to include("Condition を選択してください") 
         
       end
       it '配送料の負担に「---」が選択されている場合は出品できない' do
         @item.postage_type_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Postage type 発送料の負担を選択してください") 
+        expect(@item.errors.full_messages).to include("Postage type を選択してください") 
         
       end
       it '発送元の地域に「---」が選択されている場合は出品できない' do
         @item.prefectures_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefectures 発送元の地域を選択してください") 
+        expect(@item.errors.full_messages).to include("Prefectures を選択してください") 
         
       end
       it '発送までの日数に「---」が選択されている場合は出品できない' do
         @item.delivery_days_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery days 発送までの日数を選択してください") 
+        expect(@item.errors.full_messages).to include("Delivery days を選択してください") 
       end
       it '価格が全角数字では出品できない' do
         @item.price = "１２３４５"
