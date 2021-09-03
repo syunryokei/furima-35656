@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new, :create, :show, :edit, :update] do
     # resources :purchase_info, only: [:create]
   end
-
 end
