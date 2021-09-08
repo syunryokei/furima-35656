@@ -1,7 +1,7 @@
 class PurchaseInfosController < ApplicationController
 
   def index
-    @item = Item.find_by!(params[:id])
+    @item = Item.find(params[:item_id])
     @purchase_address = PurchaseAddress.new
   end
 
@@ -10,7 +10,7 @@ class PurchaseInfosController < ApplicationController
   end
   
   def create
-    @item = Item.find_by!(params[:id])
+    @item = Item.find(params[:item_id])
     @purchase_address = PurchaseAddress.new(purchase_info_params)
 
     if @purchase_address.valid?
