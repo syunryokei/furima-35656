@@ -1,6 +1,6 @@
 class PurchaseAddress
   include ActiveModel::Model
-  attr_accessor :postal_code, :city, :address, :building_name, :phone_number, :prefectures_id, :purchase_info_id, :user_id, :item_id
+  attr_accessor :postal_code, :city, :address, :building_name, :phone_number, :prefectures_id, :purchase_info_id, :user_id, :item_id, :token
 
 
   POSTAL_CODE_REGEX = /\A\d{3}[-]\d{4}\z/.freeze
@@ -10,8 +10,9 @@ class PurchaseAddress
     validates :city
     validates :address
     validates :phone_number, numericality: { only_integer: true, length: {maximum: 11} }
-    validates :prefectures_id, numericality: { other_than: 1, only_integer: true }
+    validates :prefectures_id, numericality: { greater_than_or_equal_to: 2, less_than_or_equal_to: 48, only_integer: true }
     validates :user_id
+    validates :token
   end
 
 
