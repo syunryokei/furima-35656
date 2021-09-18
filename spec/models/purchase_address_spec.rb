@@ -30,12 +30,12 @@ RSpec.describe PurchaseAddress, type: :model do
     it 'prefectures_idが1未満では保存できないこと' do
       @purchase_address.prefectures_id = 0
       @purchase_address.valid?
-      expect(@purchase_address.errors.full_messages).to include("Prefectures must be greater than or equal to 1")
+      expect(@purchase_address.errors.full_messages).to include("Prefectures must be greater than or equal to 2")
     end
-    it 'prefectures_idが47より大きいと保存できないこと' do
-      @purchase_address.prefectures_id = 48
+    it 'prefectures_idが48より大きいと保存できないこと' do
+      @purchase_address.prefectures_id = 49
       @purchase_address.valid?
-      expect(@purchase_address.errors.full_messages).to include("Prefectures must be less than or equal to 47")
+      expect(@purchase_address.errors.full_messages).to include("Prefectures must be less than or equal to 48")
     end
     it 'prefectures_idが空だと保存できないこと' do
       @purchase_address.prefectures_id = nil
