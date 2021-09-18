@@ -1,7 +1,11 @@
 class PurchaseInfosController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @item = Item.find(params[:item_id])
+    if current_user.id == @item.user_id || @item.purchase_info != nil
+      return redirect_to root_path
+    end
     @purchase_address = PurchaseAddress.new
   end
 
