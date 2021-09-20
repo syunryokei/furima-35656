@@ -12,6 +12,7 @@ class PurchaseAddress
     validates :phone_number, numericality: { only_integer: true, length: {maximum: 11} }
     validates :prefectures_id, numericality: { greater_than_or_equal_to: 2, less_than_or_equal_to: 48, only_integer: true }
     validates :user_id
+    validates :item_id
     validates :token
   end
 
