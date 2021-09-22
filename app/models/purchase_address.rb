@@ -9,7 +9,7 @@ class PurchaseAddress
     validates :postal_code, format: { with: POSTAL_CODE_REGEX }
     validates :city
     validates :address
-    validates :phone_number, numericality: { only_integer: true, length: {maximum: 11} }
+    validates :phone_number, numericality: { only_integer: true}, length: {minimum: 10, maximum: 11} 
     validates :prefectures_id, numericality: { greater_than_or_equal_to: 2, less_than_or_equal_to: 48, only_integer: true }
     validates :user_id
     validates :item_id
