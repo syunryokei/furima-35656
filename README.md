@@ -53,9 +53,9 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one :sipping_address
+- has_one :shipping_address
 
-## sipping_addressテーブル
+## shipping_addressesテーブル
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | postal_code    | string     | null: false                    |
