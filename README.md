@@ -1,8 +1,40 @@
 # README
 
-# テーブル設計
+<div style="text-align: center;">
 
-## users テーブル
+# FURIMA
+</div>
+
+- 日本のECサイトのクローンサイトです
+[![Image from Gyazo](https://i.gyazo.com/eb6a4bf98980b9df9423bae4ad4d6af1.jpg)](https://gyazo.com/eb6a4bf98980b9df9423bae4ad4d6af1)
+## 機能
+- 新規会員登録・ログインすると商品の購入、出品ができます
+- 新規会員登録後、ログインがお済みでない方も商品の一覧、詳細を閲覧可能です
+- 決済方法はご自身のクレジットカードを登録して購入できます
+
+## URL
+https://furima-35656.herokuapp.com/
+
+## 言語
+- Ruby 2.6.5
+
+## フレームワーク
+- Ruby on Rails 6.0
+
+## データベース
+- MySQL 
+
+## インフラストラクチャ
+- AWS EC2
+- AWS S3
+
+## DB設計
+## ER図
+[![Image from Gyazo](https://i.gyazo.com/53e4f89b59230d3d5b4b99899236825d.png)](https://gyazo.com/53e4f89b59230d3d5b4b99899236825d)
+
+## テーブル設計
+
+### users テーブル
 | Column             | Type    | Options                   |
 | ------------------ | ------- | ------------------------- |
 | family_name        | string  | null: false               |
@@ -14,13 +46,13 @@
 | encrypted_password | string  | null: false               |
 | birthday           | date    | null: false               |
 
-### Association
+#### Association
 
 - has_many :items
 - has_many :purchase_info
 
 
-## items テーブル
+### items テーブル
 | Column           | Type       | Options                         |
 | ---------------- | ---------- | ------------------------------- |
 | category_id      | integer    | null: false                     |
@@ -33,7 +65,7 @@
 | delivery_days_id | integer    | null: false                     |
 | user             | references | null: false, foreign_key: true  |
 
-### Association
+#### Association
 
 - belongs_to :user
 - has_one :purchase_info
@@ -43,19 +75,19 @@
 - belongs_to_active_hash :prefectures
 - belongs_to_active_hash :delivery_days
 
-## purchase_infoテーブル
+### purchase_infoテーブル
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
 | item   | references | null: false, foreign_key: true |
 
-### Association
+#### Association
 
 - belongs_to :user
 - belongs_to :item
 - has_one :shipping_address
 
-## shipping_addressesテーブル
+### shipping_addressesテーブル
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | postal_code    | string     | null: false                    |
@@ -66,7 +98,7 @@
 | phone_number   | string     | null: false                    |
 | purchase_info  | references | null: false, foreign_key: true |
 
-### Association
+#### Association
 
 - belongs_to :purchase_info
 - belongs_to_active_hash :prefectures
