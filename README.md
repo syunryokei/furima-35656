@@ -1,19 +1,38 @@
 # README
 
-<div style="text-align: center;">
-
 # FURIMA
-</div>
 
 - 日本のECサイトのクローンサイトです
 [![Image from Gyazo](https://i.gyazo.com/eb6a4bf98980b9df9423bae4ad4d6af1.jpg)](https://gyazo.com/eb6a4bf98980b9df9423bae4ad4d6af1)
+
 ## 機能
 - 新規会員登録・ログインすると商品の購入、出品ができます
 - 新規会員登録後、ログインがお済みでない方も商品の一覧、詳細を閲覧可能です
 - 決済方法はご自身のクレジットカードを登録して購入できます
 
-## URL
+## URL ログイン等
 https://furima-35656.herokuapp.com/
+
+- ID/Pass(basic認証)  &nbsp; → &nbsp; ID：oknw  /&nbsp; Pass：234iaa
+- テスト用アカウント等
+
+    購入者用
+
+      メールアドレス：guest_user@icloud.com
+
+      パスワード：guest1234
+
+      カード情報：
+          番号：4242424242424242
+          期限：11月(11)/2022年(22)
+          セキュリティコード：000
+
+    出品者用
+
+      メールアドレス：seller_user@icloud.com
+
+      パスワード：seller1234
+        
 
 ## 言語
 - Ruby 2.6.5
@@ -24,9 +43,10 @@ https://furima-35656.herokuapp.com/
 ## データベース
 - MySQL 
 
-## インフラストラクチャ
+## IaaS / PaaS
 - AWS EC2
 - AWS S3
+- Heroku
 
 ## DB設計
 ## ER図
