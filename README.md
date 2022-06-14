@@ -50,7 +50,7 @@ https://furima-35656.herokuapp.com/
 
 ## DB設計
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/53e4f89b59230d3d5b4b99899236825d.png)](https://gyazo.com/53e4f89b59230d3d5b4b99899236825d)
+[![Image from Gyazo](https://i.gyazo.com/252dc407b03042835040770b2c663ee8.png)](https://gyazo.com/252dc407b03042835040770b2c663ee8)
 
 ## テーブル設計
 
